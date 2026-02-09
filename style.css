@@ -401,6 +401,62 @@ ul {
     color: var(--accent-color);
 }
 
+/* Journey Section */
+.timeline {
+    position: relative;
+    max-width: 700px;
+    margin-left: 5px; /* Slight offset from container edge */
+}
+
+/* Vertical line */
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 6px; /* Centered with 14px marker */
+    width: 2px;
+    background-color: var(--text-secondary);
+    opacity: 0.3;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 40px;
+    padding-left: 45px; /* Spacing between line and text */
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+.timeline-marker {
+    position: absolute;
+    top: 5px; /* Align with title */
+    left: 0;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background-color: var(--accent-color);
+    box-shadow: 0 0 0 5px var(--bg-color); /* Creates a gap effect */
+    z-index: 2;
+}
+
+.timeline-title {
+    color: #e6f1ff;
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    font-family: var(--font-primary);
+}
+
+.timeline-desc {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    line-height: 1.6;
+    max-width: 600px;
+}
+
 /* Education Section */
 .education-card {
     background-color: var(--card-bg);
