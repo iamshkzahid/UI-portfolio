@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Zahid Shaikh | Portfolio</title>
+    <title>Zahid Shaikh | Aspiring Full-Stack Developer</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,6 +16,7 @@
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
                 <li><a href="#projects">Projects</a></li>
+                <li><a href="#timeline">Journey</a></li>
                 <li><a href="#contact">Contact</a></li>
                 <li><a href="resume.pdf" class="btn-resume" target="_blank">Resume</a></li>
             </ul>
@@ -29,16 +30,24 @@
 
     <main>
         <section id="hero" class="hero">
-            <div class="container">
-                <p class="hero-intro">Hi, my name is</p>
-                <h1 class="hero-name">Zahid Shaikh.</h1>
-                <h2 class="hero-subtitle">I build things for the web.</h2>
-                <p class="hero-desc">
-                    I'm a Computer Science student and aspiring developer based in Pune.
-                    I focus on building practical projects and constantly learning new technologies.
-                </p>
-                <div class="hero-cta">
-                    <a href="#projects" class="btn btn-primary">Check out my work!</a>
+            <div class="container hero-container">
+                <div class="hero-content">
+                    <p class="hero-intro">Hi, my name is</p>
+                    <h1 class="hero-name">Zahid Shaikh.</h1>
+                    <h2 class="hero-subtitle">Aspiring Full-Stack Developer.</h2>
+                    <p class="hero-desc">
+                        Computer Science student passionate about building real-world apps.
+                        I enjoy turning ideas into clean interfaces and functional systems.
+                    </p>
+                    <div class="hero-cta-group">
+                        <a href="#projects" class="btn btn-primary">View Projects</a>
+                        <a href="resume.pdf" class="btn btn-secondary" target="_blank">Download Resume</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="img-wrapper">
+                        <img src="Zahid.jpeg" alt="Zahid Shaikh Profile Photo">
+                    </div>
                 </div>
             </div>
         </section>
@@ -49,22 +58,24 @@
                 <div class="about-content">
                     <div class="about-text">
                         <p>
-                            Hello! My name is Zahid and I enjoy creating things that live on the internet.
-                            My interest in web development started back when I decided to try editing custom Tumblr themes — turns out hacking together HTML & CSS is pretty fun!
+                            Computer Science student passionate about building real-world apps. I enjoy turning ideas into clean interfaces and functional systems. Currently focused on full-stack development and game programming.
                         </p>
                         <p>
-                            Fast-forward to today, and I've had the privilege of working on several projects,
-                            from a <a href="#projects">Code Editor</a> to a <a href="#projects">Fitness Tracker</a>.
-                            My main focus these days is building accessible, inclusive products and digital experiences.
+                            My interest in web development started back when I decided to try editing custom Tumblr themes — turns out hacking together HTML & CSS is pretty fun!
                         </p>
                         <p>Here are a few technologies I've been working with recently:</p>
-                        <ul class="skills-list">
-                            <li>JavaScript (ES6+)</li>
-                            <li>HTML & CSS</li>
-                            <li>React</li>
-                            <li>Node.js</li>
-                            <li>C / Raylib</li>
-                        </ul>
+
+                        <!-- Skills Filter Section -->
+                        <div class="skills-filter-container">
+                            <p class="skills-intro">Click a skill to filter my projects:</p>
+                            <div class="skills-filter">
+                                <button class="skill-btn active" data-filter="all">All</button>
+                                <button class="skill-btn" data-filter="javascript">JavaScript</button>
+                                <button class="skill-btn" data-filter="html">HTML/CSS</button>
+                                <button class="skill-btn" data-filter="react">React</button>
+                                <button class="skill-btn" data-filter="c">C / Raylib</button>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -75,84 +86,137 @@
                 <h2 class="section-title">Some Things I've Built</h2>
                 <div class="projects-grid">
                     <!-- Project 1 -->
-                    <div class="project-card">
-                        <div class="project-content">
+                    <div class="project-card" data-category="javascript html css">
+                        <div class="project-header">
                             <h3 class="project-title">Code Editor Live</h3>
-                            <div class="project-desc">
-                                <p>A browser-based HTML, CSS, and JavaScript editor built for quick experiments, learning, and live preview—no setup required.</p>
-                            </div>
-                            <ul class="project-tech-list">
-                                <li>JavaScript</li>
-                                <li>HTML</li>
-                                <li>CSS</li>
-                            </ul>
                             <div class="project-links">
                                 <a href="https://github.com/iamshkzahid/Code-Editor-Live" target="_blank" aria-label="GitHub Link">
                                     <svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github"><title>GitHub</title><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
                                 </a>
+                                <!-- Add Live Demo Link if available -->
                             </div>
+                        </div>
+                        <div class="project-desc">
+                            <p>A browser-based HTML, CSS, and JavaScript editor built for quick experiments, learning, and live preview—no setup required.</p>
+                        </div>
+                        <div class="project-learned">
+                            <strong>What I learned:</strong>
+                            <p>DOM manipulation, real-time rendering, and handling user input efficiently.</p>
+                        </div>
+                        <div class="project-tech-badges">
+                            <span class="badge">JavaScript</span>
+                            <span class="badge">HTML</span>
+                            <span class="badge">CSS</span>
                         </div>
                     </div>
 
                     <!-- Project 2 -->
-                    <div class="project-card">
-                        <div class="project-content">
+                    <div class="project-card" data-category="html css javascript">
+                        <div class="project-header">
                             <h3 class="project-title">Fitness Tracker</h3>
-                            <div class="project-desc">
-                                <p>🏋️ Fitness Tracker Web App simple web app for planning workouts, calculating BMI, and tracking fitness progress using HTML, CSS, JavaScript, and browser storage.</p>
-                            </div>
-                            <ul class="project-tech-list">
-                                <li>HTML</li>
-                                <li>CSS</li>
-                                <li>JavaScript</li>
-                            </ul>
                             <div class="project-links">
                                 <a href="https://github.com/iamshkzahid/Fitness-Tracker" target="_blank" aria-label="GitHub Link">
                                     <svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github"><title>GitHub</title><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
                                 </a>
                             </div>
                         </div>
+                        <div class="project-desc">
+                            <p>Simple web app for planning workouts, calculating BMI, and tracking fitness progress using browser storage.</p>
+                        </div>
+                        <div class="project-learned">
+                            <strong>What I learned:</strong>
+                            <p>Local Storage API, form validation, and state management without frameworks.</p>
+                        </div>
+                        <div class="project-tech-badges">
+                            <span class="badge">HTML</span>
+                            <span class="badge">CSS</span>
+                            <span class="badge">JavaScript</span>
+                        </div>
                     </div>
 
                     <!-- Project 3 -->
-                    <div class="project-card">
-                        <div class="project-content">
+                    <div class="project-card" data-category="c raylib">
+                        <div class="project-header">
                             <h3 class="project-title">Match3 Game with Raylib</h3>
-                            <div class="project-desc">
-                                <p>A classic Match-3 puzzle game built with C and Raylib. Features grid-based gameplay, score tracking, and smooth animations.</p>
-                            </div>
-                            <ul class="project-tech-list">
-                                <li>C</li>
-                                <li>Raylib</li>
-                            </ul>
                             <div class="project-links">
                                 <a href="https://github.com/iamshkzahid/Match3-Game-with-raylib" target="_blank" aria-label="GitHub Link">
                                     <svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github"><title>GitHub</title><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
                                 </a>
                             </div>
                         </div>
+                        <div class="project-desc">
+                            <p>A classic Match-3 puzzle game built with C and Raylib. Features grid-based gameplay, score tracking, and smooth animations.</p>
+                        </div>
+                        <div class="project-learned">
+                            <strong>What I learned:</strong>
+                            <p>Game loop logic, memory management in C, and 2D graphics rendering.</p>
+                        </div>
+                        <div class="project-tech-badges">
+                            <span class="badge">C</span>
+                            <span class="badge">Raylib</span>
+                        </div>
                     </div>
 
                     <!-- Project 4 -->
-                    <div class="project-card">
-                        <div class="project-content">
+                    <div class="project-card" data-category="html css responsive">
+                        <div class="project-header">
                             <h3 class="project-title">Ryze.ai Redesign</h3>
-                            <div class="project-desc">
-                                <p>This project is a complete redesign of the Ryze.ai website created as part of an internship assignment, focusing on modern UI/UX principles.</p>
-                            </div>
-                            <ul class="project-tech-list">
-                                <li>HTML</li>
-                                <li>CSS</li>
-                                <li>Responsive Design</li>
-                            </ul>
                             <div class="project-links">
                                 <a href="https://github.com/iamshkzahid/ryze.ai_redesign" target="_blank" aria-label="GitHub Link">
                                     <svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github"><title>GitHub</title><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
                                 </a>
                             </div>
                         </div>
+                        <div class="project-desc">
+                            <p>This project is a complete redesign of the Ryze.ai website created as part of an internship assignment, focusing on modern UI/UX principles.</p>
+                        </div>
+                        <div class="project-learned">
+                            <strong>What I learned:</strong>
+                            <p>Modern CSS layout techniques (Flexbox/Grid), responsive design, and adhering to brand guidelines.</p>
+                        </div>
+                        <div class="project-tech-badges">
+                            <span class="badge">HTML</span>
+                            <span class="badge">CSS</span>
+                            <span class="badge">Responsive</span>
+                        </div>
                     </div>
 
+                </div>
+            </div>
+        </section>
+
+        <section id="timeline" class="section timeline-section">
+            <div class="container">
+                <h2 class="section-title">My Journey</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <span class="date">2021</span>
+                            <h3 class="title">Started Coding</h3>
+                            <p>Began my journey into the world of computer science.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <span class="date">2022</span>
+                            <h3 class="title">Built Match3 Game</h3>
+                            <p>First major project exploring game development logic with C.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <span class="date">2023</span>
+                            <h3 class="title">Built Fitness Tracker</h3>
+                            <p>Deep dive into web development and local storage.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <span class="date">Present</span>
+                            <h3 class="title">PW IOI B.Tech</h3>
+                            <p>Currently pursuing Computer Science & Artificial Intelligence.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -164,14 +228,15 @@
                     I'm currently looking for new opportunities, my inbox is always open.
                     Whether you have a question or just want to say hi, I'll try my best to get back to you!
                 </p>
-                <a href="mailto:shaikh@example.com" class="btn btn-primary">Say Hello</a>
-
-                <div class="social-links">
-                    <a href="https://github.com/iamshkzahid" target="_blank" aria-label="GitHub">
-                        <svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github"><title>GitHub</title><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                <div class="contact-buttons">
+                    <a href="mailto:shaikh@example.com" class="btn btn-primary">
+                        Email Me
                     </a>
-                    <a href="https://linkedin.com/in/zahid-shaikh" target="_blank" aria-label="LinkedIn">
-                        <svg xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-linkedin"><title>LinkedIn</title><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                    <a href="https://github.com/iamshkzahid" target="_blank" class="btn btn-secondary">
+                        GitHub
+                    </a>
+                    <a href="https://linkedin.com/in/zahid-shaikh" target="_blank" class="btn btn-secondary">
+                        LinkedIn
                     </a>
                 </div>
             </div>
