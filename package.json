@@ -15,6 +15,6 @@
   "type": "commonjs",
   "main": "index.js",
   "scripts": {
-    "test": "node --test"
+    "test": "node --test script.test.js"
   }
 }
