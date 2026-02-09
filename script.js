@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
+const initPortfolio = () => {
     // Smooth scrolling for navigation links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
@@ -82,4 +82,12 @@ document.addEventListener('DOMContentLoaded', () => {
             navMenu.classList.remove("active");
         }));
     }
-});
+};
+
+if (typeof document !== 'undefined') {
+    document.addEventListener('DOMContentLoaded', initPortfolio);
+}
+
+if (typeof module !== 'undefined') {
+    module.exports = { initPortfolio };
+}
