@@ -14,6 +14,10 @@
   "author": "ZAHID SHAIKH",
   "type": "commonjs",
   "scripts": {
-    "test": "node --test script.test.js"
+    "test": "jest"
+  },
+  "devDependencies": {
+    "jest": "^29.0.0",
+    "jest-environment-jsdom": "^29.0.0"
   }
 }
