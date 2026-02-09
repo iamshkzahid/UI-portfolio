@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const filterValue = button.getAttribute('data-filter');
 
             projectCards.forEach(card => {
-                const categories = card.getAttribute('data-category');
+                const categories = card.getAttribute('data-category').split(' ');
 
                 if (filterValue === 'all' || categories.includes(filterValue)) {
                     card.style.display = 'flex';
