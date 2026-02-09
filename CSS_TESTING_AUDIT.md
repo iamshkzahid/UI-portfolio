@@ -1,0 +1,1 @@
+I reviewed index.html and style.css and could not find the referenced inline .heading style or named colors. The current codebase already uses external CSS with hex values. This appears to reference an older version of the project, so no changes or tests were added.
