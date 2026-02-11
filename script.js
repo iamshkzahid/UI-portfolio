@@ -1,9 +1,10 @@
 const initPortfolio = () => {
     // Smooth scrolling for navigation links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
+    document.addEventListener('click', function (e) {
+        const anchor = e.target.closest('a[href^="#"]');
+        if (anchor) {
             e.preventDefault();
-            const targetId = this.getAttribute('href');
+            const targetId = anchor.getAttribute('href');
             if (targetId === '#') return;
 
             const targetElement = document.querySelector(targetId);
@@ -12,7 +13,7 @@ const initPortfolio = () => {
                     behavior: 'smooth'
                 });
             }
-        });
+        }
     });
 
     // Fade-in animation on scroll

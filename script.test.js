@@ -58,6 +58,21 @@ class HTMLElement {
         return this.attributes[name] || null;
     }
 
+    matches(selector) {
+        if (selector === this.tagName.toLowerCase()) return true;
+        if (selector.startsWith('.') && this.classList.contains(selector.substring(1))) return true;
+        if (selector.startsWith('#') && this.id === selector.substring(1)) return true;
+        if (selector.includes('[href^="#"]')) {
+            const href = this.getAttribute('href');
+            return href && href.startsWith('#');
+        }
+        return false;
+    }
+
+    closest(selector) {
+        return this.matches(selector) ? this : null;
+    }
+
     addEventListener(event, callback) {
         if (!this.eventListeners[event]) {
             this.eventListeners[event] = [];
@@ -221,12 +236,21 @@ test('script.js integration tests', async (t) => {
 
     await t.test('Smooth Scrolling', () => {
         // Trigger click on nav link
-        const clickEvent = { type: 'click', preventDefault: () => {} };
-        // We need to capture if preventDefault was called
-        let defaultPrevented = false;
-        clickEvent.preventDefault = () => { defaultPrevented = true; };
+        // Simulate bubbling by setting target and dispatching on document (which delegates)
+        // or on the element if listeners are attached there (current behavior).
+        // Since we are moving to delegation, we must ensure the event reaches the document listener.
+        // In this mock, dispatching on navLink DOES NOT bubble to document.
+        // So we dispatch on 'doc' (document) with 'target' set to navLink.
 
-        navLink.dispatchEvent(clickEvent);
+        let defaultPrevented = false;
+        const clickEvent = {
+            type: 'click',
+            target: navLink,
+            preventDefault: () => { defaultPrevented = true; }
+        };
+
+        // For delegation, the listener is on document.
+        doc.dispatchEvent(clickEvent);
 
         assert.strictEqual(defaultPrevented, true, 'Should prevent default link behavior');
         // Check properties individually to avoid VM context prototype issues
