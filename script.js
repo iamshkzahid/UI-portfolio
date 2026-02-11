@@ -77,10 +77,12 @@ const initPortfolio = () => {
             navMenu.classList.toggle("active");
         });
 
-        document.querySelectorAll(".nav-links li a").forEach(n => n.addEventListener("click", () => {
-            hamburger.classList.remove("active");
-            navMenu.classList.remove("active");
-        }));
+        navMenu.addEventListener("click", (e) => {
+            if (e.target.closest('a')) {
+                hamburger.classList.remove("active");
+                navMenu.classList.remove("active");
+            }
+        });
     }
 };
 
